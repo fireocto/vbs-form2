@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { Container, Row, Col, Form, Button, Card } from "react-bootstrap"
 
+
 function Signup() {
 
   const [formData, setFormData] = useState({
@@ -23,15 +24,17 @@ function Signup() {
   })
 
   const onChangeHandler = (event) =>{
+    event.preventDefault();
     setFormData(()=>({
       ...formData,
       [event.target.name]: event.target.value 
     }))
   }
 
-  const makeRequest = async () => {
+  const makeRequest = async (event) => {
+    event.preventDefault();
     try {
-      const response = await axios.post(`${process.env.VBS_FORM_API}/register`, formData);
+      const response = await axios.post(`${process.env.REACT_APP_VBS_FORM_API}/register`, formData);
       console.log('Response:', response.data); // Optionally log response data
     } catch (error) {
       console.error('Error fetching results:', error.message);
