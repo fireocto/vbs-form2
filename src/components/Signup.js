@@ -24,7 +24,6 @@ function Signup() {
   })
 
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
-  const navigate = useNavigate();
 
   const onChangeHandler = (event) =>{
     event.preventDefault();
