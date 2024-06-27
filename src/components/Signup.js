@@ -2,7 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Container, Row, Col, Form, Button, Card } from "react-bootstrap"
-
+import { useNavigate } from 'react-router';
 
 function Signup() {
 
@@ -23,6 +23,9 @@ function Signup() {
     photoPermission: ''
   })
 
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+  const navigate = useNavigate();
+
   const onChangeHandler = (event) =>{
     event.preventDefault();
     setFormData(()=>({
@@ -35,6 +38,13 @@ function Signup() {
     event.preventDefault();
     try {
       const response = await axios.post(`${process.env.REACT_APP_VBS_FORM_API}`, formData);
+      if (response.status === 200) {
+        setShowSuccessMessage(true); // Show success message
+        setTimeout(() => {
+          setShowSuccessMessage(false); // Hide success message after 3 seconds
+          window.location.reload(); // Reload the page after hiding the message
+        }, 3000);
+      }
       console.log('Response:', response.data); // Optionally log response data
     } catch (error) {
       console.error('Error fetching results:', error.message);
@@ -198,6 +208,13 @@ function Signup() {
             </Row> 
             <Button variant="primary" type="submit">Submit</Button>
           </Form>
+          {showSuccessMessage && (
+            <div className="success-message">
+            <span style={{ color: 'green' }}>
+            Thanks for signing up!
+            </span>
+            </div>
+      )}
         </Container>
       </header>
     </div>
