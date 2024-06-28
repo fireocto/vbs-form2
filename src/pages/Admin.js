@@ -1,5 +1,5 @@
 import React from 'react';
-import Roster from 'Roster';
+import Roster from '../components/Roster.js';
 
 function Admin() {
   return (
@@ -9,4 +9,4 @@ function Admin() {
   )
 }
 
-export default Admin
+export default Admin;
