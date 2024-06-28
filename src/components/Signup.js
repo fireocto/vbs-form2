@@ -2,6 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Container, Row, Col, Form, Button, Card } from "react-bootstrap"
+import { useLocation } from 'react-router-dom';
 
 function Signup() {
 
@@ -22,6 +23,7 @@ function Signup() {
     photoPermission: ''
   })
 
+  const location = useLocation();
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
 
   const onChangeHandler = (event) =>{
@@ -42,6 +44,8 @@ function Signup() {
           setShowSuccessMessage(false); // Hide success message after 3 seconds
           window.location.reload(); // Reload the page after hiding the message
         }, 3000);
+
+       location.push('/roster', { state: { formData } });
       }
       console.log('Response:', response.data); // Optionally log response data
     } catch (error) {
@@ -175,7 +179,7 @@ function Signup() {
                     name='guardianChurch'
                     value={formData.guardianChurch}
                     onChange={onChangeHandler}
-                    required
+
                   />
                 <Form.Text className="text">Are you visiting?</Form.Text>
                 <Form.Control 
