@@ -10,7 +10,7 @@ function Roster() {
       // Function to fetch form data from backend
       const fetchFormData = async () => {
         try {
-          const response = await axios.get(`${process.env.REACT_APP_VBS_FORM_API}`); // Replace with your API endpoint
+          const response = await axios.get(`${process.env.REACT_APP_VBS_FORM_API}/register`); // Replace with your API endpoint
           setFormDataList(response.data); // Update state with fetched data
         } catch (error) {
           console.error('Error fetching form data:', error);
