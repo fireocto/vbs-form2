@@ -1,7 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useState, useEffect} from 'react';
 import axios from 'axios';
-import { Table} from "react-bootstrap"
+import { Table, Button } from "react-bootstrap"
 
 function Roster() {
     const [formDataList, setFormDataList] = useState([]);
@@ -20,6 +20,19 @@ function Roster() {
       fetchFormData(); // Call fetchFormData when component mounts
     }, []); // Empty dependency array ensures this effect runs only once
   
+    // Function to handle delete action
+    const handleDelete = async (formId, index) => {
+        if (window.confirm(`Are you sure you want to delete this entry?`)) {
+            try {
+                await axios.delete(`${process.env.REACT_APP_VBS_FORM_API}/register/${formId}`);
+                // Update frontend state (formDataList) after successful deletion
+                setFormDataList(prevData => prevData.filter((formData, idx) => idx !== index));
+                console.log('Form data deleted successfully');
+            } catch (error) {
+                console.error('Error deleting form data:', error);
+            }
+        }
+    };
     return (
         <div>
           <h1>Blankenship VBS Roster</h1>
@@ -62,7 +75,7 @@ function Roster() {
                   <td>{formData.guardianChurch}</td>
                   <td>{formData.guardianGuest}</td>
                   <td>{formData.photoPermission ? 'Yes' : 'No'}</td>
-                  {/* Add more cells for other form fields */}
+                  <td><Button variant="danger" onClick={() => handleDelete(formData._id, index)} >Delete</Button></td>
                 </tr>
               ))}
             </tbody>
