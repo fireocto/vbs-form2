@@ -73,7 +73,7 @@ function Signup() {
             <Row>
               <Col lg={6}>
                 <Form.Group>
-                  <Form.Label>Child's Information</Form.Label>
+                  <Form.Label>Child's Information *Required*</Form.Label>
                   <Form.Control 
                     type="text" 
                     placeholder="Child's Name" 
@@ -140,7 +140,7 @@ function Signup() {
 
             <Col md={6}>
                 <Form.Group>
-                <Form.Label>Parent/Guardian Information</Form.Label>
+                <Form.Label>Parent/Guardian Information *Required*</Form.Label>
                 <Form.Control 
                     type="text" 
                     placeholder="Name" 
@@ -189,7 +189,7 @@ function Signup() {
                     value={formData.guardianGuest}
                     onChange={onChangeHandler}
                   />
-                <Form.Label className="text">May we have permission to photograph your child for promotional purposes?</Form.Label>
+                <Form.Label className="text">May we have permission to photograph your child for promotional purposes? *Required*</Form.Label>
 
                 <Form.Check
                     type='radio'
