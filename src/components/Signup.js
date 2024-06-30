@@ -84,7 +84,7 @@ function Signup() {
                   />
                   <Form.Control 
                     type="text" 
-                    placeholder="Child's Age" 
+                    placeholder="Child's Age, Enter a Number" 
                     name='childAge'
                     value={formData.childAge}
                     onChange={onChangeHandler}
@@ -118,7 +118,7 @@ function Signup() {
                   />
                   <Form.Control 
                     type="text" 
-                    placeholder="Phone Number" 
+                    placeholder="Phone Number (###-###-####)" 
                     name='childEmergencyContactNumber'
                     value={formData.childEmergencyContactNumber}
                     onChange={onChangeHandler}
@@ -151,7 +151,7 @@ function Signup() {
                   />
                 <Form.Control 
                     type="text" 
-                    placeholder="Phone Number" 
+                    placeholder="Phone Number (###-###-####)" 
                     name='guardianNumber'
                     value={formData.guardianNumber}
                     onChange={onChangeHandler}
@@ -159,7 +159,7 @@ function Signup() {
                   />
                 <Form.Control 
                     type="email" 
-                    placeholder="Email Address" 
+                    placeholder="Email Address (example@example.com)" 
                     name='guardianEmail'
                     value={formData.guardianEmail}
                     onChange={onChangeHandler}
