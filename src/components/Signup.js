@@ -37,7 +37,7 @@ function Signup() {
   const makeRequest = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post(`${process.env.REACT_APP_VBS_FORM_API}`, formData);
+      const response = await axios.post(`${process.env.REACT_APP_VBS_FORM_API}/register`, formData);
       if (response.status === 200) {
         setShowSuccessMessage(true); // Show success message
         setTimeout(() => {
