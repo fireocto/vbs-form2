@@ -56,7 +56,14 @@ function Signup() {
 
 
   return (
-    <div className="kidForm">
+    <div
+    style={{
+      minHeight: '100vh',
+      alignItems: 'center',
+      justifyContent: 'center',
+      paddingBottom: '100px'
+    }}
+  >
       <header className="kidForm-header">
         <Container fluid className="d-flex justify-content-center align-items-center p-0 vh-50">
           <img src={logoWords} alt="Logo" style={{ maxWidth: '400px', width: '100%', height: 'auto' }} />
