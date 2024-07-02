@@ -1,8 +1,9 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useState } from 'react';
 import axios from 'axios';
-import { Container, Row, Col, Form, Button, Card } from "react-bootstrap"
+import { Container, Row, Col, Form, Button } from "react-bootstrap"
 import { useLocation } from 'react-router-dom';
+import logoWords from "../assets/logo_words_v2.jpg";
 
 function Signup() {
 
@@ -57,15 +58,10 @@ function Signup() {
   return (
     <div className="kidForm">
       <header className="kidForm-header">
-        <Container>
-          <Card className="mb-10">
-            <Card.Img />
-            <Card.Body>
-              <Card.Title>VBS Signup</Card.Title>
-              <Card.Text>Sign your child up for VBS!</Card.Text>
-            </Card.Body>
-          </Card>
+        <Container fluid className="d-flex justify-content-center align-items-center p-0 vh-50">
+          <img src={logoWords} alt="Logo" style={{ maxWidth: '400px', width: '100%', height: 'auto' }} />
         </Container>
+      </header>
 
         <Container>  
           <Form onSubmit={makeRequest}>
@@ -218,7 +214,6 @@ function Signup() {
             </div>
       )}
         </Container>
-      </header>
     </div>
   )
 }
