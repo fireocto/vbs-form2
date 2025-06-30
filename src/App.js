@@ -25,28 +25,3 @@ function App() {
 }
 
 export default App
-
-
-
-
-
-
-
-// function App() {
-//   return (
-//     <div>
-//       <BrowserRouter>
-//         <Routes>
-//           <Route index element={<Home />} />
-//           <Route path='/home' element={<Home />} />
-//           <Route path='/contact' element={<Contact />} />
-//           <Route path='/register' element={<Register />} />
-//           <Route path='*' element={<NoPage />} />
-//         </Routes>
-//       </BrowserRouter>
-//     </div>
-
-//   )
-// }
-
-// export default App
