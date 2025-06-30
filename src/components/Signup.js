@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { Container, Row, Col, Form, Button } from "react-bootstrap"
 import { useLocation } from 'react-router-dom';
-import logoWords from "../assets/logo_words_v2.jpg";
+import logoWords from "../assets/2025_tight.jpg";
 
 function Signup() {
 
@@ -65,8 +65,8 @@ function Signup() {
     }}
   >
       <header className="kidForm-header">
-        <Container fluid className="d-flex justify-content-center align-items-center p-0 vh-50">
-          <img src={logoWords} alt="Logo" style={{ maxWidth: '400px', width: '100%', height: 'auto' }} />
+        <Container fluid className="d-flex justify-content-center align-items-center p-0 vh-50 mb-4 mt-3">
+          <img src={logoWords} alt="Logo" style={{ maxWidth: '600px', width: '100%', height: 'auto' }} />
         </Container>
       </header>
 
@@ -78,14 +78,16 @@ function Signup() {
                 <Form.Group>
                   <Form.Label>Child's Information *Required*</Form.Label>
                   <Form.Control 
+                    className="mb-1"
                     type="text" 
-                    placeholder="Child's Name" 
+                    placeholder="Child's Name, First & Last" 
                     name='childName'
                     value={formData.childName}
                     onChange={onChangeHandler}
                     required
                   />
                   <Form.Control 
+                    className="mb-1"
                     type="text" 
                     placeholder="Child's Age, Enter a Number" 
                     name='childAge'
@@ -94,6 +96,7 @@ function Signup() {
                     required
                   />
                   <Form.Control 
+                    className="mb-1"
                     type="text" 
                     placeholder="Address" 
                     name='childAddress'
@@ -103,6 +106,7 @@ function Signup() {
                   />
                   <Form.Text className="text">Medical or other information we need to know</Form.Text>
                   <Form.Control 
+                    className="mb-1"
                     type="textarea" 
                     placeholder="Please include food allergies" 
                     name='childInfo'
@@ -112,8 +116,9 @@ function Signup() {
                   />
                   <Form.Text className="text">Emergency Contact</Form.Text>
                   <Form.Control 
+                    className="mb-1"
                     type="text" 
-                    placeholder="Name" 
+                    placeholder="Name, First & Last" 
                     name='childEmergencyContactName'
                     value={formData.childEmergencyContactName}
                     onChange={onChangeHandler}
@@ -129,6 +134,7 @@ function Signup() {
                   />
                   <Form.Text className='text'>Dismissal Information</Form.Text>
                   <Form.Control 
+                    className="mb-1"
                     type="textarea" 
                     placeholder="Who may pick up your child at the end of each VBS day?"
                     name='childDismissal'
@@ -145,14 +151,16 @@ function Signup() {
                 <Form.Group>
                 <Form.Label>Parent/Guardian Information *Required*</Form.Label>
                 <Form.Control 
+                    className="mb-1"
                     type="text" 
-                    placeholder="Name" 
+                    placeholder="Name, First & Last" 
                     name='guardianName'
                     value={formData.guardianName}
                     onChange={onChangeHandler}
                     required
                   />
                 <Form.Control 
+                    className="mb-1"
                     type="text" 
                     placeholder="Phone Number (###-###-####)" 
                     name='guardianNumber'
@@ -161,6 +169,7 @@ function Signup() {
                     required
                   />
                 <Form.Control 
+                    className="mb-1"
                     type="email" 
                     placeholder="Email Address (example@example.com)" 
                     name='guardianEmail'
@@ -169,6 +178,7 @@ function Signup() {
                     required
                   />
                 <Form.Control 
+                    className="mb-1"
                     type="text" 
                     placeholder="Address, if different from child" 
                     name='guardianAddress'
@@ -177,6 +187,7 @@ function Signup() {
                   />
                 <Form.Text className="text">Do You Attend Church?</Form.Text>
                 <Form.Control 
+                    className="mb-1"
                     type="text" 
                     placeholder="If so, where?" 
                     name='guardianChurch'
@@ -186,6 +197,7 @@ function Signup() {
                   />
                 <Form.Text className="text">Are you visiting?</Form.Text>
                 <Form.Control 
+                    className="mb-1"
                     type="text" 
                     placeholder="Who are you a guest of?" 
                     name='guardianGuest'
@@ -202,6 +214,7 @@ function Signup() {
                     onChange={onChangeHandler}>
                 </Form.Check>
                 <Form.Check
+                    className="mb-3"
                     type='radio'
                     label='No'
                     value={false}
