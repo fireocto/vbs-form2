@@ -7,10 +7,11 @@ import breakerRockLogo from "../assets/2025_full.jpg";
 const Home = () => {
   return (
     <div
+      className='hero-background'
       style={{
         backgroundImage: `url(${churchWide})`,
         backgroundSize: 'cover',
-        backgroundPosition: 'center top', // shows more of the top of the image
+        backgroundPosition: 'center top', 
         backgroundRepeat: 'no-repeat',
         minHeight: '100vh',
         display: 'flex',
@@ -51,7 +52,7 @@ const Home = () => {
                 {/* <Card.Text>
                   VBS is coming soon! Sign up your child today!
                 </Card.Text> */}
-                <Link to="/register">
+                <Link to="https://form.jotform.com/251825090295055">
                   <Button variant="primary" className='mt-2 mb-2'>Register Now</Button>
                 </Link>
               </Card.Body>
