@@ -3,6 +3,7 @@ import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import churchWide from "../assets/church_wide.png";
 import breakerRockLogo from "../assets/2025_full.jpg";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const Home = () => {
   return (
